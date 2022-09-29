@@ -5,6 +5,9 @@
  <div>
  <%= link_to "Edit photo", edit_photo_path(@photo) %>
 </div>
+<div>
+<%= link_to "Delete photo", photo_path(@photo), data: {turbo_method: :delete} %>
+</div>
  <div>
 <a href="/photos">Back to all photos</a>
 </div>

@@ -45,4 +45,10 @@ class PhotosController < ApplicationController
     redirect_to "/photos"
   end
 
+  def destroy
+    @photo = Photo.find_by(id: params[:id])
+    @photo.destroy
+    redirect_to "/photos", status: :see_other
+  end
+
 end
