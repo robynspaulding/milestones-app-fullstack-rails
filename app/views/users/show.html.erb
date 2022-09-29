@@ -1,0 +1,17 @@
+<h1><%= current_user.name%>'s Profile</h1>
+<p>Email: <%= current_user.email %> </p>
+<% if current_user.birthday != nil%>
+<p>Birthday: <%= current_user.birthday.strftime("%B, %d, %Y")%> </p>
+<%end%>
+
+
+ <img src="<%= current_user.image%>"
+  style="width: 100px; height: 100px;"
+  align="center" >
+
+<div>
+<a href="/users/<%= current_user.id %>/edit">Edit Account Info</a>
+</div>
+<div>
+<a href="/users/<%= current_user.id %>" data-turbo-method="delete">Delete Profile</a>
+</div>

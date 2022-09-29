@@ -1,0 +1,29 @@
+<h1>Edit User Profile</h1>
+
+<%= form_with model: @user do |form| %>
+  <div style="margin-top: 15px;">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div style="margin-top: 15px;">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div style="margin-top: 15px;">
+    <%= form.label :birthday %>
+    <%= form.text_field :birthday %>
+  </div>  <%= form.label :birthday do %>
+   Input yyyy/mm/dd <span class="required">*</span>
+<% end %>
+
+  <div style="margin-top: 15px;">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div style="margin-top: 50px; margin-bottom: 40px;">
+    <%= form.submit "Update Profile", class: "btn btn-outline-success" %>
+  </div>
+  <% end %>

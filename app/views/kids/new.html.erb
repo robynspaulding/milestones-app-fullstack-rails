@@ -1,0 +1,27 @@
+<h1>New Kid</h1>
+<%= form_with model: @kid do |form| %>
+  <div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+  <div>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+
+  <div>
+    <%= form.label :birthday %>
+    <%= form.text_field :birthday %>
+  </div> <%= form.label :birthday do %>
+   Input yyyy/mm/dd <span class="required">*</span>
+<% end %>
+  
+  <div>
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end%>

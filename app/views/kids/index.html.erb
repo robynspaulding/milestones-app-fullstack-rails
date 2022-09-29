@@ -1,0 +1,14 @@
+<h1> Kids</h1>
+<% @kids.each do |kid| %>
+  <h2><%= kid.first_name %> <%= kid.last_name %></h2>
+  <p>Birthday: <%= kid.birthday.strftime("%B, %d, %Y") %></p>
+  <img src="<%= kid.image%>"
+  style="width: 100px; height: 100px;"
+  align="center" >
+  <div>
+  <a href="/kids/<%= kid.id %>">Click to see <%=kid.first_name%>'s Profile</a>
+  </div>
+ 
+
+  <% end %>
+

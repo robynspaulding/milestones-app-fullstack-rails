@@ -1,0 +1,16 @@
+<h1><%= @kid.first_name%>'s Profile</h1>
+<h2>Hi I'm <%= @kid.first_name %> <%= @kid.last_name %></h2>
+<p>My birthday is <%= @kid.birthday.strftime("%B, %d, %Y") %> and I am <%= Date.today.year - @kid.birthday.year %> year old!</p>
+ <img src="<%= @kid.image%>"
+  style="width: 100px; height: 100px;"
+  align="center" >
+  <div>
+<a href="/kids">Back to all kids</a>
+</div>
+<div>
+<a href="/kids/<%= @kid.id %>/edit">Edit kid</a>
+</div>
+<div>
+<a href="/kids/<%= @kid.id %>" data-turbo-method="delete">Delete Profile</a>
+</div>
+

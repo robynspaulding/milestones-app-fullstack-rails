@@ -1,0 +1,29 @@
+<h1>Edit Kid Profile</h1>
+
+<%= form_with model: @kid do |form| %>
+  <div style="margin-top: 15px;">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div style="margin-top: 15px;">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+ <div style="margin-top: 15px;">
+    <%= form.label :birthday %>
+    <%= form.text_field :birthday %>
+  </div>  <%= form.label :birthday do %>
+   Input yyyy/mm/dd <span class="required">*</span>
+<% end %>
+
+  <div style="margin-top: 15px;">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+  
+  <div style="margin-top: 50px; margin-bottom: 40px;">
+    <%= form.submit "Update Profile", class: "btn btn-outline-success" %>
+  </div>
+<% end%>
