@@ -1,0 +1,22 @@
+<h1>New Family Member</h1>
+<%= form_with model: @familytree do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :relationship_to_user %>
+    <%= form.text_field :relationship_to_user %>
+  </div>
+  <div>
+    <%= form.label :birthday %>
+    <%= form.text_field :birthday %>
+  </div>
+  <div>
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+  <div style="margin-top: 50px; margin-bottom: 40px;">
+    <%= form.submit "Create Profile", class: "btn btn-outline-success" %>
+  </div>
+<% end%>

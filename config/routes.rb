@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   #Photos routes
   resources :photos 
+
+  #Familytrees routes
+  resources :familytrees
+
 end
 #resources :photos
 # Automatically generates the following routes

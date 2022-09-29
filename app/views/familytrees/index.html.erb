@@ -1,0 +1,13 @@
+<h1>My Family Tree</h1>
+<div>
+<%= link_to "Add Family Member", new_familytree_path %>
+</div>
+
+<% @familytrees.each do |familytree| %>
+  <h2><%= familytree.name %></h2>
+
+  <img src="<%= familytree.image%>" >
+<div>
+<%= link_to "View Family Member", familytree %>
+</div>
+<% end %>

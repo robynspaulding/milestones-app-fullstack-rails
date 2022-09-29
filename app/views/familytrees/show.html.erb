@@ -1,0 +1,9 @@
+
+<h1><%=@familytree.name%>'s info</h1>
+<p>relationship to <%=current_user.name%>: <%= @familytree.relationship_to_user %></p>
+  <p>Birthday: <%= @familytree.birthday.strftime("%B, %d, %Y") %></p>
+  <img src="<%= @familytree.image%>" >
+
+  <div><a href="/familytrees/<%= @familytree.id %>/edit">Edit Family Member Info</a></div>
+
+<div><a href="/familytrees">Back to Family Tree</a>
