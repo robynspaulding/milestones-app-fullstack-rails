@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
+
+  #Photos routes
+  resources :photos 
 end
 #resources :photos
 # Automatically generates the following routes

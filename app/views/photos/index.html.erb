@@ -1,0 +1,7 @@
+<h1>All photos</h1>
+<% @photos.each do |photo| %>
+  <p>Description: <%= photo.description %></p>
+  <p>date: <%= photo.date %></p>
+<img src="<%= photo.image_url%>" >
+  <% end %>
+
