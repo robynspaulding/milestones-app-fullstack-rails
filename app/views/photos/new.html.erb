@@ -1,0 +1,23 @@
+<h1>New Photo</h1>
+<form method="post" action="/photos">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div>
+    <label>image_url </label>
+    <input type="text" name="photo[image_url]">
+  </div>
+  <div>
+    <label>description </label>
+    <input type="text" name="photo[description]">
+  </div>
+  <div>
+    <label>date </label>
+    <input type="text" name="photo[date]">
+  </div>
+  <div>
+    <label>kid_id </label>
+    <input type="text" name="photo[kid_id]">
+  </div>
+  <div>
+    <input type="submit" value="Create photo">
+  </div>
+</form>

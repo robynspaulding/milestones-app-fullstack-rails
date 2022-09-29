@@ -1,7 +1,13 @@
 <h1>All photos</h1>
+<div>
+<%= link_to "New photo", new_photo_path %>
+</div>
 <% @photos.each do |photo| %>
-  <p>Description: <%= photo.description %></p>
-  <p>date: <%= photo.date %></p>
 <img src="<%= photo.image_url%>" >
-  <% end %>
+<div>
+<a href="/photos/<%= photo.id %>">View Photo Details</a>
+</div>
+
+<% end %>
+
 
