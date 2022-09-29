@@ -31,4 +31,18 @@ class PhotosController < ApplicationController
     redirect_to "/photos"
   end
 
+  def edit
+    @photo = Photo.find_by(id: params[:id])
+    render template: "photos/edit"
+  end
+
+  def update
+    @photo = Photo.find_by(id: params[:id])
+    @photo.image_url = params[:photo][:image_url]
+    @photo.description = params[:photo][:description]
+    @photo.date = params[:photo][:date]
+    @photo.save
+    redirect_to "/photos"
+  end
+
 end

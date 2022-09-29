@@ -2,7 +2,9 @@
   <p>Description: <%= @photo.description %></p>
   <p>date: <%= @photo.date %></p>
 <img src="<%= @photo.image_url%>" >
- 
+ <div>
+ <%= link_to "Edit photo", edit_photo_path(@photo) %>
+</div>
  <div>
 <a href="/photos">Back to all photos</a>
 </div>
