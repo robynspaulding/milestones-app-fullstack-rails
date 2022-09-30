@@ -4,12 +4,19 @@
  <img src="<%= @kid.image%>"
   style="width: 100px; height: 100px;"
   align="center" >
-  <div>
+
+<div>
+<a href="/milestones/<%= @kid.id %>">See <%=@kid.first_name%>'s Milestones</a>
+</div>
+
+<div>
 <a href="/kids">Back to all kids</a>
 </div>
+
 <div>
 <a href="/kids/<%= @kid.id %>/edit">Edit kid</a>
 </div>
+
 <div>
 <a href="/kids/<%= @kid.id %>" data-turbo-method="delete">Delete Profile</a>
 </div>

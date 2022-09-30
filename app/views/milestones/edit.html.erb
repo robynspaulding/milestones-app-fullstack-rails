@@ -1,0 +1,29 @@
+<h1>Edit Milestone</h1>
+<form method="post" action="/milestones/<%= @milestone.id %>">
+  <input type="hidden" name="_method" value="patch" autocomplete="off">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div>
+    <label>Name </label>
+    <input type="text" name="milestone[name]" value="<%= @milestone.name %>">
+  </div>
+  <div>
+    <label>Milestone </label>
+    <input type="text" name="milestone[milestone]" value="<%= @milestone.milestone %>">
+  </div>
+  <div>
+    <label>Date </label>
+    <input type="text" name="milestone[date]" value="<%= @milestone.date %>">
+  </div>
+  <div>
+    <label>Description </label>
+    <input type="text" name="milestone[description]" value="<%= @milestone.description %>">
+  </div>
+<div>
+    <label>Image </label>
+    <input type="text" name="milestone[image]" value="<%= @milestone.image %>">
+  </div>
+  
+  <div>
+    <input type="submit" value="Update milestone">
+  </div>
+</form>
