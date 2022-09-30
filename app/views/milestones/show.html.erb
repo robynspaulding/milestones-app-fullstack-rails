@@ -6,8 +6,14 @@
   <p>Picture: 
   <div>
   <img src="<%= @milestone.image %>"></p>
+  </div>
+  
+  <div>
   <a href="/milestones/<%= @milestone.id %>/edit">Edit Milestone</a>
-
+  </div>
+  
+  <div>
+  <a href="/milestones/<%= @milestone.id %>" data-turbo-method="delete">Delete this Milestone</a>
   </div>
   
   <a href="/milestones">Back to All Milestones</a>

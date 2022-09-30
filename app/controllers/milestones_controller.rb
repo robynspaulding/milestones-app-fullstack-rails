@@ -43,7 +43,11 @@ class MilestonesController < ApplicationController
     @milestone.save
     redirect_to "/milestones"
   end
-
-
+  
+  def destroy
+    @milestone = Milestone.find_by(id: params[:id])
+    @milestone.destroy
+    redirect_to "/milestones", status: :see_other
+  end
 
 end
