@@ -1,0 +1,11 @@
+  <h1>Milestone info</h1>
+<h2><%= @milestone.name %></h2>
+  <p>Date: <%= @milestone.date.strftime("%B, %d, %Y") %></p>
+  <p>Milestone: <%=@milestone.milestone%></p>
+  <p>Description: <%= @milestone.description %></p>
+  <p>Picture: 
+  <div>
+  <img src="<%= @milestone.image %>"></p>
+  </div>
+  
+  <a href="/milestones">Back to All Milestones</a>

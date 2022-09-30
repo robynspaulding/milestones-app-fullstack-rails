@@ -1,0 +1,8 @@
+<h1>All Milestones</h1>
+<% @milestones.each do |milestone| %>
+  <h3>Name: <%= milestone.name %></h3>
+  <h3>Milestone: <%=milestone.milestone%></h3>
+  <div>
+  <a href="/milestones/<%= milestone.id %>">See Details</a>
+  </div>
+<% end %>

@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   #Familytrees routes
   resources :familytrees
 
+  #Milestones routes
+  resources :milestones 
+
 end
 #resources :photos
 # Automatically generates the following routes

@@ -44,4 +44,9 @@ class FamilytreesController < ApplicationController
     end
   end
 
+  def destroy
+    @familytree = Familytree.find_by(id: params[:id])
+    @familytree.destroy
+    redirect_to "/familytrees", status: :see_other
+  end
 end
