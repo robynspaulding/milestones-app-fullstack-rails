@@ -1,6 +1,6 @@
 <h1>Photo info</h1>
 
-    <div class="card" style="width: 40rem;  margin-top: 100px;
+    <div class="card" style="width: 20rem;  margin-top: 100px;
       margin-bottom: 100px;
       margin-right: 450px;
       margin-left: 450px;">
@@ -11,14 +11,15 @@
         <p class="card-text"><%= @photo.description %></p>
           <p>date: <%= @photo.date.strftime("%B %d, %Y") %></p>
          <div>
-          <a href="/photos"  class="btn btn-primary"> Back to all photos</a>
+          <a href="/photos"  class="btn btn-info"> Back to all photos</a>
         </div>
       </div> 
       <div>
-      <%= link_to "Edit photo", edit_photo_path(@photo) %>
+      <%= link_to "Edit photo", edit_photo_path(@photo),  class: "btn btn-info"  %>
       </div>
+      <p></p>
       <div>
-      <%= link_to "Delete photo", photo_path(@photo), data: {turbo_method: :delete} %>
+      <%= link_to "Delete photo", photo_path(@photo),  class: "btn btn-info", data: {turbo_method: :delete} %>
       </div>
     </div>
   
