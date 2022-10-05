@@ -1,9 +1,18 @@
 
-<h1><%=@familytree.name%>'s info</h1>
-<p>relationship to <%=current_user.name%>: <%= @familytree.relationship_to_user %></p>
-  <p>Birthday: <%= @familytree.birthday.strftime("%B, %d, %Y") %></p>
-  <img src="<%= @familytree.image%>" >
-  <div><a href="/familytrees/<%= @familytree.id %>/edit">Edit Family Member Info</a></div>
-  <a href="/familytrees/<%= @familytree.id %>" data-turbo-method="delete">Remove from Family Tree</a>
+<div class="card glass-card" style="width: 30rem; margin-left: auto;
+    margin-right: auto; margin-top: 30px; text-align: center;">
+  <div class="card-body">
+    <h1 class="card-title" style="margin-bottom: 60px;"><%=@familytree.name%></h1>
 
-<div><a href="/familytrees">Back to Family Tree</a>
+  <img src="<%= @familytree.image%>" >
+  <p>relationship to <%=current_user.name%>: <%= @familytree.relationship_to_user %></p>
+  <p>Birthday: <%= @familytree.birthday.strftime("%B %d, %Y") %></p>
+  <div><a href="/familytrees/<%= @familytree.id %>/edit" button type="button" class="btn btn-info"></button> Edit Family Member Info</a></div>
+<p></p>
+  <div>
+  <a href="/familytrees/<%= @familytree.id %>" data-turbo-method="delete" button type="button" class="btn btn-info"></button>Remove from Family Tree</a>
+</div>
+<p></p>
+<div>
+<a href="/familytrees" button type="button" class="btn btn-info"></button>Back to Family Tree</a>
+</div>

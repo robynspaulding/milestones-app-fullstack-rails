@@ -1,7 +1,7 @@
 <h1>My Family Tree</h1>
 <div>
 
-<%= link_to "Add Family Member", new_familytree_path %>
+<%= link_to "Add Family Member", new_familytree_path, class: "btn btn-info"  %>
 </div>
 
 <% @familytrees.each do |familytree| %>
@@ -15,7 +15,7 @@
     <p class="card-text"><% if familytree.birthday%>
   <p>Birthday: <%= familytree.birthday.strftime("%B %d, %Y") %></p>
   <%end%></p>
-    <a href="/familytrees/<%= familytree.id %>" class="btn btn-primary">See <%= familytree.name%>'s Profile</a>
+    <a href="/familytrees/<%= familytree.id %>" class="btn btn-info">See <%= familytree.name%>'s Profile</a>
   </div>
 </div>
   <% end %>
