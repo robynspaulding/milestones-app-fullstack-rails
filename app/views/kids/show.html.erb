@@ -10,21 +10,19 @@
         <h5 class="card-title"></h5>
         <p class="card-text"><%= @kid.first_name%> <%= @kid.last_name %></p>
           <p>Birthday: <%= @kid.birthday.strftime("%B %d, %Y") %></p>
-         <div>
-         <a href="/milestones/" class="btn btn-primary">Milestones </a>
-         
-     
-    
-        
-        </div>
+      <div>
+         <a href="/milestones/" class="btn btn-info">Milestones </a>
+      </div>
       </div> 
-      <div>
-      <%= link_to "Edit kid", edit_kid_path(@kid) %>
-      </div>
-      <div>
-      <%= link_to "Delete kid", kid_path(@kid), data: {turbo_method: :delete} %>
-        <a href="/kids"  class="btn btn-primary"> Back to all kids</a>
-      </div>
+      <p>
+      <%= link_to "Edit kid", edit_kid_path(@kid), class:"btn btn-info" %>
+      </p>
+      <p>
+      <%= link_to "Delete kid", kid_path(@kid),  data: {turbo_method: :delete}, class: "btn btn-info"%>
+      </p>
+      <p>
+        <a href="/kids"  class="btn btn-info"> Back to all kids</a>
+      </p>
     </div>
 
 

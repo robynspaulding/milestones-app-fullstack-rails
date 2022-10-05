@@ -1,4 +1,5 @@
 <h1> Kids</h1>
+<a href="kids/new" class="btn btn-info">New Kid</a>
 <% @kids.each do |kid| %>
   <div class="card" style="width: 18rem; margin-top: 100px;
       margin-bottom: 100px;
@@ -10,7 +11,7 @@
     <p class="card-text"><% if kid.birthday%>
   <p>Birthday: <%= kid.birthday.strftime("%B %d, %Y") %></p>
   <%end%></p>
-    <a href="/kids/<%= kid.id %>" class="btn btn-primary">See <%= kid.first_name%>'s Profile</a>
+    <a href="/kids/<%= kid.id %>" class="btn btn-info">See <%= kid.first_name%>'s Profile</a>
   </div>
 </div>
   <% end %>

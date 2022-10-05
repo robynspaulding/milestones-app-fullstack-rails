@@ -1,5 +1,7 @@
-<h1>Edit Kid Profile</h1>
-
+<div class="card glass-card" style="width: 30rem; margin-left: auto;
+    margin-right: auto; margin-top: 30px; text-align: center;">
+  <div class="card-body">
+    <h1 class="card-title" style="margin-bottom: 60px;">Edit Kid's Profile</h1>
 <%= form_with model: @kid do |form| %>
   <div style="margin-top: 15px;">
     <%= form.label :first_name %>
@@ -24,6 +26,6 @@
   </div>
   
   <div style="margin-top: 50px; margin-bottom: 40px;">
-    <%= form.submit "Update Profile", class: "btn btn-outline-success" %>
+    <%= form.submit "Update Profile", class: "btn btn-info" %>
   </div>
 <% end%>
