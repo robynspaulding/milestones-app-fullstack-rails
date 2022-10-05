@@ -9,13 +9,15 @@
 <p class="card-title"> <h2><%= @milestone.name %></h2> </p>
   <div class="card-body"> <p>Date: <%= @milestone.date.strftime("%B, %d, %Y") %></p><p>Milestone: <%=@milestone.milestone%></p><p>Description: <%= @milestone.description %></p>
     <div>
-    <a href="/milestones/<%= @milestone.id %>/edit">Edit Milestone</a>
+    <a href="/milestones/<%= @milestone.id %>/edit", class="btn btn-info">Edit Milestone</a>
     </div>
+    <p></p>
     <div>
-    <a href="/milestones/<%= @milestone.id %>" data-turbo-method="delete">Delete Milestone</a> 
+    <a href="/milestones/<%= @milestone.id %>" data-turbo-method="delete", class="btn btn-info">Delete Milestone</a> 
     </div>
+    <p></p>
     <div>  
-    <a href="/milestones">Back to All Milestones</a>
+    <a href="/milestones", class="btn btn-info">Back to All Milestones</a>
    </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <h1>All Milestones</h1>
- <a href="/milestones/new">New Milestone</a>
+ <a href="/milestones/new", class="btn btn-info">New Milestone</a>
 <% @milestones.each do |milestone| %>
   <div class="card" style="width: 18rem; margin-top: 100px;
       margin-bottom: 100px;
@@ -10,7 +10,7 @@
 <h5 class="card-title">  <h2><%= milestone.name %> </h2></h5>
   <div class="card-body">
     <h2 class="card-title">  <h2><%= milestone.milestone %> </h2></h2>
-    <a href="/milestones/<%= milestone.id %>" class="btn btn-primary">See Details</a>
+    <a href="/milestones/<%= milestone.id %>" class="btn btn-info">See Details</a>
   </div>
 </div>
   <% end %>
