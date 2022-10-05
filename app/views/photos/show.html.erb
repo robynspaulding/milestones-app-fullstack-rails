@@ -1,13 +1,24 @@
 <h1>Photo info</h1>
-  <p>Description: <%= @photo.description %></p>
-  <p>date: <%= @photo.date %></p>
-<img src="<%= @photo.image_url%>" >
- <div>
- <%= link_to "Edit photo", edit_photo_path(@photo) %>
-</div>
-<div>
-<%= link_to "Delete photo", photo_path(@photo), data: {turbo_method: :delete} %>
-</div>
- <div>
-<a href="/photos">Back to all photos</a>
-</div>
+
+    <div class="card" style="width: 40rem;  margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 450px;
+      margin-left: 450px;">
+    
+      <img src="<%= @photo.image_url%>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"><%= @photo.description %></p>
+          <p>date: <%= @photo.date.strftime("%B %d, %Y") %></p>
+         <div>
+          <a href="/photos"  class="btn btn-primary"> Back to all photos</a>
+        </div>
+      </div> 
+      <div>
+      <%= link_to "Edit photo", edit_photo_path(@photo) %>
+      </div>
+      <div>
+      <%= link_to "Delete photo", photo_path(@photo), data: {turbo_method: :delete} %>
+      </div>
+    </div>
+  

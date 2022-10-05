@@ -1,5 +1,9 @@
 <h1>Edit User Profile</h1>
-
+<div class="card glass-card" style="width: 30rem; margin-left: auto;
+    margin-right: auto; margin-top: 30px; text-align: center;">
+  <div class="card-body">
+    <h1 class="card-title" style="margin-bottom: 60px;">Edit Info</h1>
+<div>
 <%= form_with model: @user do |form| %>
   <div style="margin-top: 15px;">
     <%= form.label :name %>
@@ -15,7 +19,7 @@
     <%= form.label :birthday %>
     <%= form.text_field :birthday %>
   </div>  <%= form.label :birthday do %>
-   Input yyyy/mm/dd <span class="required">*</span>
+    yyyy/mm/dd <span class="required">*</span>
 <% end %>
 
   <div style="margin-top: 15px;">

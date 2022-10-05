@@ -1,10 +1,16 @@
 <h1>All Milestones</h1>
-<a href="/milestones/new">New Milestone</a>
-
+ <a href="/milestones/new">New Milestone</a>
 <% @milestones.each do |milestone| %>
-  <h3>Name: <%= milestone.name %></h3>
-  <h3>Milestone: <%=milestone.milestone%></h3>
-  <div>
-  <a href="/milestones/<%= milestone.id %>">See Details</a>
+  <div class="card" style="width: 18rem; margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 450px;
+      margin-left: 450px;">
+  <img src="<%= milestone.image %>" class="card-img-top" >
+
+<h5 class="card-title">  <h2><%= milestone.name %> </h2></h5>
+  <div class="card-body">
+    <h2 class="card-title">  <h2><%= milestone.milestone %> </h2></h2>
+    <a href="/milestones/<%= milestone.id %>" class="btn btn-primary">See Details</a>
   </div>
-<% end %>
+</div>
+  <% end %>

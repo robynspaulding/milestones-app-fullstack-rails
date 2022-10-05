@@ -1,13 +1,21 @@
 <h1>My Family Tree</h1>
 <div>
+
 <%= link_to "Add Family Member", new_familytree_path %>
 </div>
 
 <% @familytrees.each do |familytree| %>
-  <h2><%= familytree.name %></h2>
-
-  <img src="<%= familytree.image%>" >
-<div>
-<%= link_to "View Family Member", familytree %>
+ <div class="card" style="width: 18rem; margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 450px;
+      margin-left: 450px;">
+  <img src="<%= familytree.image %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">  <h2><%= familytree.name %> </h2></h5>
+    <p class="card-text"><% if familytree.birthday%>
+  <p>Birthday: <%= familytree.birthday.strftime("%B %d, %Y") %></p>
+  <%end%></p>
+    <a href="/familytrees/<%= familytree.id %>" class="btn btn-primary">See <%= familytree.name%>'s Profile</a>
+  </div>
 </div>
-<% end %>
+  <% end %>

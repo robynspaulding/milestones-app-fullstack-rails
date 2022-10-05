@@ -1,19 +1,21 @@
   <h1>Milestone info</h1>
-<h2><%= @milestone.name %></h2>
-  <p>Date: <%= @milestone.date.strftime("%B, %d, %Y") %></p>
-  <p>Milestone: <%=@milestone.milestone%></p>
-  <p>Description: <%= @milestone.description %></p>
-  <p>Picture: 
-  <div>
-  <img src="<%= @milestone.image %>"></p>
+ 
+    <div class="card" style="width: 18rem; margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 450px;
+      margin-left: 450px;">
+  <img src="<%= @milestone.image %>" class="card-img-top" >
+
+<p class="card-title"> <h2><%= @milestone.name %></h2> </p>
+  <div class="card-body"> <p>Date: <%= @milestone.date.strftime("%B, %d, %Y") %></p><p>Milestone: <%=@milestone.milestone%></p><p>Description: <%= @milestone.description %></p>
+    <div>
+    <a href="/milestones/<%= @milestone.id %>/edit">Edit Milestone</a>
+    </div>
+    <div>
+    <a href="/milestones/<%= @milestone.id %>" data-turbo-method="delete">Delete Milestone</a> 
+    </div>
+    <div>  
+    <a href="/milestones">Back to All Milestones</a>
+   </div>
   </div>
-  
-  <div>
-  <a href="/milestones/<%= @milestone.id %>/edit">Edit Milestone</a>
-  </div>
-  
-  <div>
-  <a href="/milestones/<%= @milestone.id %>" data-turbo-method="delete">Delete this Milestone</a>
-  </div>
-  
-  <a href="/milestones">Back to All Milestones</a>
+</div>

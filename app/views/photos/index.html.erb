@@ -1,13 +1,26 @@
 <h1>All photos</h1>
+
 <div>
 <%= link_to "New photo", new_photo_path %>
 </div>
-<% @photos.each do |photo| %>
-<img src="<%= photo.image_url%>" >
-<div>
-<a href="/photos/<%= photo.id %>">View Photo Details</a>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card" style="width: 18rem;  margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 450px;
+      margin-left: 450px;">
+    <% @photos.each do |photo| %>
+      <img src="<%= photo.image_url%>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"><%= photo.description %></p>
+    </p>
+        <a href="photos/<%= photo.id %>" class="btn btn-primary">See Photo Details</a>
+      </div><%end%>
+    </div>
+  </div>
 </div>
 
-<% end %>
 
 

@@ -1,5 +1,6 @@
 class KidsController < ApplicationController
   before_action :current_user
+  before_action :authenticate_user
 
   def index
     @kids = Kid.all

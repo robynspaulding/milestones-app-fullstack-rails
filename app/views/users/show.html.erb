@@ -1,17 +1,19 @@
-<h1><%= current_user.name%>'s Profile</h1>
-<p>Email: <%= current_user.email %> </p>
-<% if current_user.birthday != nil%>
-<p>Birthday: <%= current_user.birthday.strftime("%B, %d, %Y")%> </p>
-<%end%>
+<div class="card" style="width: 18rem; margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 450px;
+      margin-left: 450px;">
+  <img src="<%= current_user.image%>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><h1><%= current_user.name%>'s Profile</h1></h5>
+    <p class="card-text">Email: <%= current_user.email %> </p>
+    <p class="card-text">Birthday: <%= current_user.birthday.strftime("%B, %d, %Y")%> </p>
+    <div>
+    <a href="/users/<%= current_user.id %>/edit" class="btn btn-primary">Edit Your Account </a>
+    </div>
 
 
- <img src="<%= current_user.image%>"
-  style="width: 100px; height: 100px;"
-  align="center" >
-
-<div>
-<a href="/users/<%= current_user.id %>/edit">Edit Account Info</a>
-</div>
-<div>
-<a href="/users/<%= current_user.id %>" data-turbo-method="delete">Delete Profile</a>
+    <div>
+    <a href="/users/<%= current_user.id %>" class="btn btn-primary" data-turbo-method="delete">Delete Your Profile</a>
+    </div>
+  </div>
 </div>

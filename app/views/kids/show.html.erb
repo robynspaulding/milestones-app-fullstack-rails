@@ -1,23 +1,30 @@
 <h1><%= @kid.first_name%>'s Profile</h1>
-<h2>Hi I'm <%= @kid.first_name %> <%= @kid.last_name %></h2>
-<p>My birthday is <%= @kid.birthday.strftime("%B, %d, %Y") %> and I am <%= Date.today.year - @kid.birthday.year %> year old!</p>
- <img src="<%= @kid.image%>"
-  style="width: 100px; height: 100px;"
-  align="center" >
 
-<div>
-<a href="/milestones/<%= @kid.id %>">See <%=@kid.first_name%>'s Milestones</a>
-</div>
+   <div class="card" style="width: 20rem;  margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 450px;
+      margin-left: 450px;">
+    
+      <img src="<%= @kid.image%>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text"><%= @kid.first_name%> <%= @kid.last_name %></p>
+          <p>Birthday: <%= @kid.birthday.strftime("%B %d, %Y") %></p>
+         <div>
+         <a href="/milestones/" class="btn btn-primary">Milestones </a>
+         
+     
+    
+        
+        </div>
+      </div> 
+      <div>
+      <%= link_to "Edit kid", edit_kid_path(@kid) %>
+      </div>
+      <div>
+      <%= link_to "Delete kid", kid_path(@kid), data: {turbo_method: :delete} %>
+        <a href="/kids"  class="btn btn-primary"> Back to all kids</a>
+      </div>
+    </div>
 
-<div>
-<a href="/kids">Back to all kids</a>
-</div>
-
-<div>
-<a href="/kids/<%= @kid.id %>/edit">Edit kid</a>
-</div>
-
-<div>
-<a href="/kids/<%= @kid.id %>" data-turbo-method="delete">Delete Profile</a>
-</div>
 

@@ -1,4 +1,8 @@
-<h1>New Photo</h1>
+<div class="card glass-card" style="width: 30rem; margin-left: auto;
+    margin-right: auto; margin-top: 30px; text-align: center;">
+  <div class="card-body">
+    <h1 class="card-title" style="margin-bottom: 60px;">New Photo</h1>
+<div>
 <form method="post" action="/photos">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <div>
@@ -10,7 +14,7 @@
     <input type="text" name="photo[description]">
   </div>
   <div>
-    <label>date </label>
+    <label>date (yyyy/mm/dd) </label>
     <input type="text" name="photo[date]">
   </div>
   <div>
