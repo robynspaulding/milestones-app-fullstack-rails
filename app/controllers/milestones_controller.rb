@@ -23,8 +23,11 @@ class MilestonesController < ApplicationController
       image: params[:milestone][:image],
       kid_id: params[:milestone][:kid_id],
     )
-    @milestone.save
-    redirect_to "/milestones"
+    if @milestone.save
+      redirect_to "/milestones"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit

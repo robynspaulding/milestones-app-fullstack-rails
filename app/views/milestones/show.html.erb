@@ -7,8 +7,13 @@
   <img src="<%= @milestone.image %>" class="card-img-top" >
 
 <p class="card-title"> <h2><%= @milestone.name %></h2> </p>
-  <div class="card-body"> <p>Date: <%= @milestone.date.strftime("%B, %d, %Y") %></p><p>Milestone: <%=@milestone.milestone%></p><p>Description: <%= @milestone.description %></p>
-    <div>
+  <div class="card-body"> 
+    <%if @milestone.date%>
+      <p>Date:<%= @milestone.date.strftime("%B, %d, %Y")%></p>
+    <%end%>
+    <p>Milestone: <%=@milestone.milestone%></p>
+    <p>Description: <%= @milestone.description %></p>
+  <div>
     <a href="/milestones/<%= @milestone.id %>/edit", class="btn btn-info">Edit Milestone</a>
     </div>
     <p></p>
