@@ -10,9 +10,7 @@
         <h5 class="card-title"></h5>
         <p class="card-text"><%= @kid.first_name%> <%= @kid.last_name %></p>
           <p>Birthday: <%= @kid.birthday.strftime("%B %d, %Y") %></p>
-      <div>
-         <a href="/milestones/" class="btn btn-info">Milestones </a>
-      </div>
+    
       </div> 
       <p>
       <%= link_to "Edit kid", edit_kid_path(@kid), class:"btn btn-info" %>
@@ -25,4 +23,20 @@
       </p>
     </div>
 
+<h1><%= @kid.first_name%>'s Milestones</h1>
+<%@kid.milestones.each do |milestone|%>
+ <div class="card" style="width: 18rem; margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 450px;
+      margin-left: 450px;">
+  <img src="<%= milestone.image %>" class="card-img-top" >
+
+<h5 class="card-title">  <h2><%= milestone.name %> </h2></h5>
+  <div class="card-body">
+    <h2 class="card-title">  <h2><%= milestone.milestone %> </h2></h2>
+    <p>Description: <%= milestone.description %></p>
+    <%if milestone.date%>
+      <p>Date:<%= milestone.date.strftime("%B, %d, %Y")%></p>
+    <%end%>
+<%end%>
 

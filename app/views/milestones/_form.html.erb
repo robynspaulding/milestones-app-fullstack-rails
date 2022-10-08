@@ -1,0 +1,18 @@
+<%= form_with model: [ @kid, @kid.milestones.build ] do |form| %>
+  <p>
+    <%= form.label :milestone %><br>
+    <%= form.text_field :milestone %>
+  </p>
+  <p>
+    <%= form.label :date %><br>
+    <%= form.text_area :date %>
+  </p>
+    <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.submit class: "btn btn-info"%>
+  </p>
+
+  <% end %>

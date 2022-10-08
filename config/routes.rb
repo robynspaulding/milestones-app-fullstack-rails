@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  #Kids profile routes
-  resources :kids 
-
+  #root "sessions#new"
+  
+  #Kids / Milestones routes
+  resources :kids do 
+    resources :milestones 
+  end
   #users routes
   get "/signup" => "users#new"
   get "/users/:id/edit" => "users#edit"
@@ -23,8 +26,8 @@ Rails.application.routes.draw do
   #Familytrees routes
   resources :familytrees
 
-  #Milestones routes
-  resources :milestones 
+
+
 
 end
 #resources :photos

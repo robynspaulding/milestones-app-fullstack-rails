@@ -3,7 +3,7 @@ class KidsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @kids = Kid.all
+    @kids = current_user.kids
     render template: "kids/index"
   end
 
