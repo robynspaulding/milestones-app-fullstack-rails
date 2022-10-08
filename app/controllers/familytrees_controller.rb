@@ -1,6 +1,6 @@
 class FamilytreesController < ApplicationController
   def index
-    @familytrees = Familytree.all
+    @familytrees = current_user.familytrees
     render template: "familytrees/index"
   end
 
