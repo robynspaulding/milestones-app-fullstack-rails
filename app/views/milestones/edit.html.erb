@@ -1,34 +1,26 @@
-<h1>Edit Milestone</h1>
+
 <div class="card glass-card" style="width: 30rem; margin-left: auto;
     margin-right: auto; margin-top: 30px; text-align: center;">
   <div class="card-body">
-    <h1 class="card-title" style="margin-bottom: 60px;">Edit Info</h1>
-<div>
-<form method="post" action="/milestones/<%= @milestone.id %>">
-  <input type="hidden" name="_method" value="patch" autocomplete="off">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <h1 class="card-title" style="margin-bottom: 60px;">Edit Milestone</h1>
+<%= form_with model: @kid do |form| %>
   <div>
-    <label>Name </label>
-    <input type="text" name="milestone[name]" value="<%= @milestone.name %>">
+    <%= form.label :milestone %>
+    <%= form.text_field :milestone %>
   </div>
   <div>
-    <label>Milestone </label>
-    <input type="text" name="milestone[milestone]" value="<%= @milestone.milestone %>">
+    <%= form.label :date %>
+    <%= form.text_field :date %>
   </div>
   <div>
-    <label>Date (yyyy/mm/dd) </label>
-    <input type="text" name="milestone[date]" value="<%= @milestone.date %>">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
   </div>
   <div>
-    <label>Description </label>
-    <input type="text" name="milestone[description]" value="<%= @milestone.description %>">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
   </div>
-<div>
-    <label>Image </label>
-    <input type="text" name="milestone[image]" value="<%= @milestone.image %>">
-  </div>
-  
   <div>
-    <input type="submit" value="Update milestone" class="btn btn-info">
+    <%= form.submit class: "btn btn-info"%>
   </div>
-</form>
+<% end%>

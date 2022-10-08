@@ -26,28 +26,28 @@ class MilestonesController < ApplicationController
       kid_id: @kid.id,
     )
     if @milestone.save
-      redirect_to "/kids/:id"
+      redirect_to "/kids"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  # def edit
-  #   @milestone = Milestone.find_by(id: params[:id])
-  #   render template: "milestones/edit"
-  # end
+  def edit
+    @milestone = Milestone.find_by(id: params[:id])
+    render template: "milestones/edit"
+  end
 
-  # def update
-  #   @milestone = Milestone.find_by(id: params[:id])
-  #   @milestone.name = params[:milestone][:name] || @milestone.name
-  #   @milestone.milestone = params[:milestone][:milestone]|| @milestone.milestone
-  #   @milestone.date = params[:milestone][:date]|| @milestone.date
-  #   @milestone.description = params[:milestone][:description]|| @milestone.description
-  #   @milestone.image = params[:milestone][:image]|| @milestone.image
+  def update
+    @kid = Kid.find(params[:kid_id])
+    @milestone = @kid.milestones.find_by(id: params[:id])
+    @milestone.milestone = params[:milestone][:milestone]|| @milestone.milestone
+    @milestone.date = params[:milestone][:date]|| @milestone.date
+    @milestone.description = params[:milestone][:description]|| @milestone.description
+    @milestone.image = params[:milestone][:image]|| @milestone.image
 
-  #   @milestone.save
-  #   redirect_to "/milestones"
-  # end
+    @milestone.save
+    redirect_to "/kids"
+  end
   
   def destroy
     @milestone = Milestone.find_by(id: params[:id])

@@ -39,4 +39,11 @@
       <p>Date:<%= milestone.date.strftime("%B, %d, %Y")%></p>
     <%end%>
 <%end%>
+ 
+ <p>
+  <%= link_to "Edit Milestone", edit_kid_milestone_path(@kid), class:"btn btn-info" %>
+  </p>
 
+  <p>
+  <%= link_to "New Milestone", new_kid_milestone_path(@kid), class:"btn btn-info" %>
+  </p>
